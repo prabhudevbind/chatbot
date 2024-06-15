@@ -1,0 +1,1314 @@
+{
+  "settings": {
+    "languages": [
+      "en"
+    ],
+    "tag": "nlp",
+    "threshold": 0.5,
+    "autoLoad": true,
+    "autoSave": true,
+    "modelFileName": "model.nlp",
+    "executeActionsBeforeAnswers": false,
+    "calculateSentiment": true
+  },
+  "nluManager": {
+    "settings": {
+      "tag": "nlu-manager"
+    },
+    "locales": [
+      "en"
+    ],
+    "languageNames": {},
+    "domainManagers": {
+      "en": {
+        "settings": {
+          "locale": "en",
+          "trainByDomain": false,
+          "tag": "domain-manager-en",
+          "nluByDomain": {
+            "default": {
+              "className": "NeuralNlu",
+              "settings": {}
+            }
+          },
+          "useStemDict": true
+        },
+        "stemDict": {
+          "goodby": {
+            "intent": "greetings.bye",
+            "domain": "default"
+          },
+          "bye,care,take": {
+            "intent": "greetings.bye",
+            "domain": "default"
+          },
+          "later,see,you": {
+            "intent": "greetings.bye",
+            "domain": "default"
+          },
+          "bye,for,now": {
+            "intent": "greetings.bye",
+            "domain": "default"
+          },
+          "go,i,must": {
+            "intent": "greetings.bye",
+            "domain": "default"
+          },
+          "hello": {
+            "intent": "greetings.hello",
+            "domain": "default"
+          },
+          "hi": {
+            "intent": "greetings.hello",
+            "domain": "default"
+          },
+          "howdi": {
+            "intent": "greetings.hello",
+            "domain": "default"
+          },
+          "greet": {
+            "intent": "greetings.hello",
+            "domain": "default"
+          },
+          "hey": {
+            "intent": "greetings.hello",
+            "domain": "default"
+          },
+          "hiya": {
+            "intent": "greetings.hello",
+            "domain": "default"
+          },
+          "yo": {
+            "intent": "greetings.hello",
+            "domain": "default"
+          },
+          "day,good": {
+            "intent": "greetings.hello",
+            "domain": "default"
+          },
+          "is,up,what": {
+            "intent": "greetings.hello",
+            "domain": "default"
+          },
+          "go,how,is,it": {
+            "intent": "greetings.hello",
+            "domain": "default"
+          },
+          "salut": {
+            "intent": "greetings.hello",
+            "domain": "default"
+          },
+          "hi,there": {
+            "intent": "greetings.hello",
+            "domain": "default"
+          },
+          "hey,there": {
+            "intent": "greetings.hello",
+            "domain": "default"
+          },
+          "folk,hi": {
+            "intent": "greetings.hello",
+            "domain": "default"
+          },
+          "everyon,hello": {
+            "intent": "greetings.hello",
+            "domain": "default"
+          },
+          "hello,there": {
+            "intent": "greetings.hello",
+            "domain": "default"
+          },
+          "do,how,you": {
+            "intent": "greetings.hello",
+            "domain": "default"
+          },
+          "doodi,howdi": {
+            "intent": "greetings.hello",
+            "domain": "default"
+          },
+          "ahoy": {
+            "intent": "greetings.hello",
+            "domain": "default"
+          },
+          "is,name,what,your": {
+            "intent": "name",
+            "domain": "default"
+          },
+          "are,who,you": {
+            "intent": "name",
+            "domain": "default"
+          },
+          "i,know,may,name,your": {
+            "intent": "name",
+            "domain": "default"
+          },
+          "call,i,should,what,you": {
+            "intent": "name",
+            "domain": "default"
+          },
+          "a,do,have,name,you": {
+            "intent": "name",
+            "domain": "default"
+          },
+          "name,your": {
+            "intent": "name",
+            "domain": "default"
+          },
+          "me,name,tell,your": {
+            "intent": "name",
+            "domain": "default"
+          },
+          "are,call,what,you": {
+            "intent": "name",
+            "domain": "default"
+          },
+          "am,i,talk,to,who": {
+            "intent": "name",
+            "domain": "default"
+          },
+          "can,me,name,tell,you,your": {
+            "intent": "name",
+            "domain": "default"
+          },
+          "full,is,name,what,your": {
+            "intent": "name",
+            "domain": "default"
+          },
+          "call,do,peopl,what,you": {
+            "intent": "name",
+            "domain": "default"
+          },
+          "ani,do,have,name,you": {
+            "intent": "name",
+            "domain": "default"
+          }
+        },
+        "intentDict": {
+          "greetings.bye": "default",
+          "greetings.hello": "default",
+          "name": "default"
+        },
+        "sentences": [
+          {
+            "domain": "default",
+            "utterance": "goodbye",
+            "intent": "greetings.bye"
+          },
+          {
+            "domain": "default",
+            "utterance": "bye take care",
+            "intent": "greetings.bye"
+          },
+          {
+            "domain": "default",
+            "utterance": "see you later",
+            "intent": "greetings.bye"
+          },
+          {
+            "domain": "default",
+            "utterance": "bye for now",
+            "intent": "greetings.bye"
+          },
+          {
+            "domain": "default",
+            "utterance": "i must go",
+            "intent": "greetings.bye"
+          },
+          {
+            "domain": "default",
+            "utterance": "hello",
+            "intent": "greetings.hello"
+          },
+          {
+            "domain": "default",
+            "utterance": "hi",
+            "intent": "greetings.hello"
+          },
+          {
+            "domain": "default",
+            "utterance": "howdy",
+            "intent": "greetings.hello"
+          },
+          {
+            "domain": "default",
+            "utterance": "greetings",
+            "intent": "greetings.hello"
+          },
+          {
+            "domain": "default",
+            "utterance": "hey",
+            "intent": "greetings.hello"
+          },
+          {
+            "domain": "default",
+            "utterance": "hiya",
+            "intent": "greetings.hello"
+          },
+          {
+            "domain": "default",
+            "utterance": "yo",
+            "intent": "greetings.hello"
+          },
+          {
+            "domain": "default",
+            "utterance": "good day",
+            "intent": "greetings.hello"
+          },
+          {
+            "domain": "default",
+            "utterance": "what's up",
+            "intent": "greetings.hello"
+          },
+          {
+            "domain": "default",
+            "utterance": "how's it going",
+            "intent": "greetings.hello"
+          },
+          {
+            "domain": "default",
+            "utterance": "salutations",
+            "intent": "greetings.hello"
+          },
+          {
+            "domain": "default",
+            "utterance": "hi there",
+            "intent": "greetings.hello"
+          },
+          {
+            "domain": "default",
+            "utterance": "hey there",
+            "intent": "greetings.hello"
+          },
+          {
+            "domain": "default",
+            "utterance": "hi folks",
+            "intent": "greetings.hello"
+          },
+          {
+            "domain": "default",
+            "utterance": "hello everyone",
+            "intent": "greetings.hello"
+          },
+          {
+            "domain": "default",
+            "utterance": "hello there",
+            "intent": "greetings.hello"
+          },
+          {
+            "domain": "default",
+            "utterance": "how do you do",
+            "intent": "greetings.hello"
+          },
+          {
+            "domain": "default",
+            "utterance": "hey hey",
+            "intent": "greetings.hello"
+          },
+          {
+            "domain": "default",
+            "utterance": "howdy doody",
+            "intent": "greetings.hello"
+          },
+          {
+            "domain": "default",
+            "utterance": "ahoy",
+            "intent": "greetings.hello"
+          },
+          {
+            "domain": "default",
+            "utterance": "what is your name",
+            "intent": "name"
+          },
+          {
+            "domain": "default",
+            "utterance": "who are you",
+            "intent": "name"
+          },
+          {
+            "domain": "default",
+            "utterance": "may I know your name",
+            "intent": "name"
+          },
+          {
+            "domain": "default",
+            "utterance": "what should I call you",
+            "intent": "name"
+          },
+          {
+            "domain": "default",
+            "utterance": "do you have a name",
+            "intent": "name"
+          },
+          {
+            "domain": "default",
+            "utterance": "your name",
+            "intent": "name"
+          },
+          {
+            "domain": "default",
+            "utterance": "tell me your name",
+            "intent": "name"
+          },
+          {
+            "domain": "default",
+            "utterance": "what are you called",
+            "intent": "name"
+          },
+          {
+            "domain": "default",
+            "utterance": "what's your name",
+            "intent": "name"
+          },
+          {
+            "domain": "default",
+            "utterance": "who am I talking to",
+            "intent": "name"
+          },
+          {
+            "domain": "default",
+            "utterance": "can you tell me your name",
+            "intent": "name"
+          },
+          {
+            "domain": "default",
+            "utterance": "what's your full name",
+            "intent": "name"
+          },
+          {
+            "domain": "default",
+            "utterance": "what do people call you",
+            "intent": "name"
+          },
+          {
+            "domain": "default",
+            "utterance": "do you have any name",
+            "intent": "name"
+          }
+        ],
+        "domains": {
+          "master_domain": {
+            "settings": {
+              "locale": "en",
+              "tag": "nlu-en",
+              "keepStopwords": true,
+              "nonefeatureValue": 1,
+              "nonedeltaMultiplier": 1.2,
+              "spellCheck": false,
+              "spellCheckDistance": 1,
+              "filterZeros": true,
+              "log": true
+            },
+            "features": {
+              "goodby": 1,
+              "bye": 1,
+              "take": 1,
+              "care": 1,
+              "see": 1,
+              "you": 1,
+              "later": 1,
+              "for": 1,
+              "now": 1,
+              "i": 1,
+              "must": 1,
+              "go": 1,
+              "hello": 1,
+              "hi": 1,
+              "howdi": 1,
+              "greet": 1,
+              "hey": 1,
+              "hiya": 1,
+              "yo": 1,
+              "good": 1,
+              "day": 1,
+              "what": 1,
+              "is": 1,
+              "up": 1,
+              "how": 1,
+              "it": 1,
+              "salut": 1,
+              "there": 1,
+              "folk": 1,
+              "everyon": 1,
+              "do": 1,
+              "doodi": 1,
+              "ahoy": 1,
+              "your": 1,
+              "name": 1,
+              "who": 1,
+              "are": 1,
+              "may": 1,
+              "know": 1,
+              "should": 1,
+              "call": 1,
+              "have": 1,
+              "a": 1,
+              "tell": 1,
+              "me": 1,
+              "am": 1,
+              "talk": 1,
+              "to": 1,
+              "can": 1,
+              "full": 1,
+              "peopl": 1,
+              "ani": 1
+            },
+            "intents": {
+              "greetings.bye": 1,
+              "greetings.hello": 1,
+              "name": 1
+            },
+            "intentFeatures": {
+              "greetings.bye": {
+                "goodby": 1,
+                "bye": 1,
+                "take": 1,
+                "care": 1,
+                "see": 1,
+                "you": 1,
+                "later": 1,
+                "for": 1,
+                "now": 1,
+                "i": 1,
+                "must": 1,
+                "go": 1
+              },
+              "greetings.hello": {
+                "hello": 1,
+                "hi": 1,
+                "howdi": 1,
+                "greet": 1,
+                "hey": 1,
+                "hiya": 1,
+                "yo": 1,
+                "good": 1,
+                "day": 1,
+                "what": 1,
+                "is": 1,
+                "up": 1,
+                "how": 1,
+                "it": 1,
+                "go": 1,
+                "salut": 1,
+                "there": 1,
+                "folk": 1,
+                "everyon": 1,
+                "do": 1,
+                "you": 1,
+                "doodi": 1,
+                "ahoy": 1
+              },
+              "name": {
+                "what": 1,
+                "is": 1,
+                "your": 1,
+                "name": 1,
+                "who": 1,
+                "are": 1,
+                "you": 1,
+                "may": 1,
+                "i": 1,
+                "know": 1,
+                "should": 1,
+                "call": 1,
+                "do": 1,
+                "have": 1,
+                "a": 1,
+                "tell": 1,
+                "me": 1,
+                "am": 1,
+                "talk": 1,
+                "to": 1,
+                "can": 1,
+                "full": 1,
+                "peopl": 1,
+                "ani": 1
+              }
+            },
+            "featuresToIntent": {
+              "goodby": [
+                "greetings.bye"
+              ],
+              "bye": [
+                "greetings.bye"
+              ],
+              "take": [
+                "greetings.bye"
+              ],
+              "care": [
+                "greetings.bye"
+              ],
+              "see": [
+                "greetings.bye"
+              ],
+              "you": [
+                "greetings.bye",
+                "greetings.hello",
+                "name"
+              ],
+              "later": [
+                "greetings.bye"
+              ],
+              "for": [
+                "greetings.bye"
+              ],
+              "now": [
+                "greetings.bye"
+              ],
+              "i": [
+                "greetings.bye",
+                "name"
+              ],
+              "must": [
+                "greetings.bye"
+              ],
+              "go": [
+                "greetings.bye",
+                "greetings.hello"
+              ],
+              "hello": [
+                "greetings.hello"
+              ],
+              "hi": [
+                "greetings.hello"
+              ],
+              "howdi": [
+                "greetings.hello"
+              ],
+              "greet": [
+                "greetings.hello"
+              ],
+              "hey": [
+                "greetings.hello"
+              ],
+              "hiya": [
+                "greetings.hello"
+              ],
+              "yo": [
+                "greetings.hello"
+              ],
+              "good": [
+                "greetings.hello"
+              ],
+              "day": [
+                "greetings.hello"
+              ],
+              "what": [
+                "greetings.hello",
+                "name"
+              ],
+              "is": [
+                "greetings.hello",
+                "name"
+              ],
+              "up": [
+                "greetings.hello"
+              ],
+              "how": [
+                "greetings.hello"
+              ],
+              "it": [
+                "greetings.hello"
+              ],
+              "salut": [
+                "greetings.hello"
+              ],
+              "there": [
+                "greetings.hello"
+              ],
+              "folk": [
+                "greetings.hello"
+              ],
+              "everyon": [
+                "greetings.hello"
+              ],
+              "do": [
+                "greetings.hello",
+                "name"
+              ],
+              "doodi": [
+                "greetings.hello"
+              ],
+              "ahoy": [
+                "greetings.hello"
+              ],
+              "your": [
+                "name"
+              ],
+              "name": [
+                "name"
+              ],
+              "who": [
+                "name"
+              ],
+              "are": [
+                "name"
+              ],
+              "may": [
+                "name"
+              ],
+              "know": [
+                "name"
+              ],
+              "should": [
+                "name"
+              ],
+              "call": [
+                "name"
+              ],
+              "have": [
+                "name"
+              ],
+              "a": [
+                "name"
+              ],
+              "tell": [
+                "name"
+              ],
+              "me": [
+                "name"
+              ],
+              "am": [
+                "name"
+              ],
+              "talk": [
+                "name"
+              ],
+              "to": [
+                "name"
+              ],
+              "can": [
+                "name"
+              ],
+              "full": [
+                "name"
+              ],
+              "peopl": [
+                "name"
+              ],
+              "ani": [
+                "name"
+              ]
+            },
+            "neuralNetwork": {
+              "settings": {
+                "locale": "en",
+                "tag": "nlu-en",
+                "keepStopwords": true,
+                "nonefeatureValue": 1,
+                "nonedeltaMultiplier": 1.2,
+                "spellCheck": false,
+                "spellCheckDistance": 1,
+                "filterZeros": true,
+                "log": true
+              },
+              "features": [
+                "goodby",
+                "bye",
+                "take",
+                "care",
+                "see",
+                "you",
+                "later",
+                "for",
+                "now",
+                "i",
+                "must",
+                "go",
+                "hello",
+                "hi",
+                "howdi",
+                "greet",
+                "hey",
+                "hiya",
+                "yo",
+                "good",
+                "day",
+                "what",
+                "is",
+                "up",
+                "how",
+                "it",
+                "salut",
+                "there",
+                "folk",
+                "everyon",
+                "do",
+                "doodi",
+                "ahoy",
+                "your",
+                "name",
+                "who",
+                "are",
+                "may",
+                "know",
+                "should",
+                "call",
+                "have",
+                "a",
+                "tell",
+                "me",
+                "am",
+                "talk",
+                "to",
+                "can",
+                "full",
+                "peopl",
+                "ani"
+              ],
+              "intents": [
+                "greetings.bye",
+                "greetings.hello",
+                "name"
+              ],
+              "perceptrons": [
+                [
+                  12.070943832397461,
+                  6.18720817565918,
+                  3.0937819480895996,
+                  3.0937819480895996,
+                  5.5380473136901855,
+                  1.2937885522842407,
+                  5.5380473136901855,
+                  3.0932905673980713,
+                  3.0932905673980713,
+                  2.4724442958831787,
+                  5.774991989135742,
+                  4.118069648742676,
+                  -1.9051389694213867,
+                  -1.9042383432388306,
+                  -1.893913745880127,
+                  -1.8765225410461426,
+                  -1.9009311199188232,
+                  -1.8657079935073853,
+                  -1.8574697971343994,
+                  -0.9506773948669434,
+                  -0.9506773948669434,
+                  -2.1736791133880615,
+                  -2.009392261505127,
+                  -0.2228415459394455,
+                  -2.351612091064453,
+                  -1.6574982404708862,
+                  -1.841700792312622,
+                  -0.6722537875175476,
+                  -0.32253992557525635,
+                  -0.34791299700737,
+                  -1.1170650720596313,
+                  -0.3750826120376587,
+                  -1.8268399238586426,
+                  -1.1602976322174072,
+                  -1.5553330183029175,
+                  -1.936218500137329,
+                  -1.2530341148376465,
+                  -0.8263870477676392,
+                  -0.8263870477676392,
+                  -1.6658822298049927,
+                  -1.8217856884002686,
+                  -0.39479225873947144,
+                  -0.24765117466449738,
+                  -0.22178076207637787,
+                  -0.22178076207637787,
+                  -0.8106338381767273,
+                  -0.8106338381767273,
+                  -0.8106338381767273,
+                  -0.2014852911233902,
+                  0,
+                  -0.014079291373491287,
+                  -0.12281491607427597,
+                  1.8970024094696236
+                ],
+                [
+                  -9.452749252319336,
+                  -4.887549877166748,
+                  -2.4445865154266357,
+                  -2.4445865154266357,
+                  -2.8786392211914062,
+                  -3.9926841259002686,
+                  -2.8786392211914062,
+                  -2.442164421081543,
+                  -2.442164421081543,
+                  -5.056710243225098,
+                  -2.4605538845062256,
+                  -2.826554775238037,
+                  4.2940673828125,
+                  4.3025689125061035,
+                  4.322904109954834,
+                  4.47964334487915,
+                  4.4199442863464355,
+                  4.459264278411865,
+                  4.446463108062744,
+                  2.2432563304901123,
+                  2.2432563304901123,
+                  -1.8089097738265991,
+                  1.7499172687530518,
+                  4.472038745880127,
+                  5.969119071960449,
+                  -0.346248984336853,
+                  4.424824237823486,
+                  0.16363947093486786,
+                  0.29670968651771545,
+                  0.34916025400161743,
+                  2.3662540912628174,
+                  0.26255518198013306,
+                  4.403547763824463,
+                  -4.340662956237793,
+                  -5.885295391082764,
+                  -3.1315369606018066,
+                  -2.6687605381011963,
+                  -0.45188769698143005,
+                  -0.45188769698143005,
+                  -0.5492689609527588,
+                  -3.9055957794189453,
+                  -1.5419446229934692,
+                  -0.8062124252319336,
+                  -0.41770288348197937,
+                  -0.41770288348197937,
+                  -1.0446573495864868,
+                  -1.0446573495864868,
+                  -1.0446573495864868,
+                  0,
+                  -0.19660192728042603,
+                  -2.4136128425598145,
+                  -0.7241803407669067,
+                  9.79794937815797
+                ],
+                [
+                  -0.6884658932685852,
+                  -0.8182962536811829,
+                  -0.39767467975616455,
+                  -0.39767467975616455,
+                  -1.9138795137405396,
+                  2.660881996154785,
+                  -1.9138795137405396,
+                  -0.3172369599342346,
+                  -0.3172369599342346,
+                  1.7711739540100098,
+                  -1.4000332355499268,
+                  -1.5869193077087402,
+                  -0.7140685319900513,
+                  -0.7416894435882568,
+                  -0.6089944839477539,
+                  -0.5893926024436951,
+                  -0.6504063606262207,
+                  -0.5855057239532471,
+                  -0.583116888999939,
+                  -0.3441108763217926,
+                  -0.3441108763217926,
+                  2.5933237075805664,
+                  -2.030062675476074,
+                  -2.1053009033203125,
+                  -4.078583240509033,
+                  -0.13531142473220825,
+                  -0.575169563293457,
+                  -0.40415337681770325,
+                  -0.1327393352985382,
+                  -0.14317062497138977,
+                  0.8713793754577637,
+                  -0.10708151012659073,
+                  -0.5557569861412048,
+                  5.697813034057617,
+                  7.483093738555908,
+                  6.5612335205078125,
+                  4.208935260772705,
+                  -0.5657508969306946,
+                  -0.5657508969306946,
+                  2.016967296600342,
+                  4.445879936218262,
+                  1.7880792617797852,
+                  0.9200013279914856,
+                  0.19547100365161896,
+                  0.19547100365161896,
+                  1.7961143255233765,
+                  1.7961143255233765,
+                  1.7961143255233765,
+                  -2.46386981010437,
+                  -0.09875251352787018,
+                  2.9770193099975586,
+                  0.8720789551734924,
+                  0.617954694320551
+                ]
+              ]
+            }
+          }
+        }
+      }
+    },
+    "intentDomains": {},
+    "extraSentences": [
+      [
+        "en",
+        "goodbye"
+      ],
+      [
+        "en",
+        "bye take care"
+      ],
+      [
+        "en",
+        "see you later"
+      ],
+      [
+        "en",
+        "bye for now"
+      ],
+      [
+        "en",
+        "i must go"
+      ],
+      [
+        "en",
+        "hello"
+      ],
+      [
+        "en",
+        "hi"
+      ],
+      [
+        "en",
+        "howdy"
+      ],
+      [
+        "en",
+        "greetings"
+      ],
+      [
+        "en",
+        "hey"
+      ],
+      [
+        "en",
+        "hiya"
+      ],
+      [
+        "en",
+        "yo"
+      ],
+      [
+        "en",
+        "good day"
+      ],
+      [
+        "en",
+        "what's up"
+      ],
+      [
+        "en",
+        "how's it going"
+      ],
+      [
+        "en",
+        "salutations"
+      ],
+      [
+        "en",
+        "hi there"
+      ],
+      [
+        "en",
+        "hey there"
+      ],
+      [
+        "en",
+        "hi folks"
+      ],
+      [
+        "en",
+        "hello everyone"
+      ],
+      [
+        "en",
+        "hello there"
+      ],
+      [
+        "en",
+        "how do you do"
+      ],
+      [
+        "en",
+        "hey hey"
+      ],
+      [
+        "en",
+        "howdy doody"
+      ],
+      [
+        "en",
+        "ahoy"
+      ],
+      [
+        "en",
+        "what is your name"
+      ],
+      [
+        "en",
+        "who are you"
+      ],
+      [
+        "en",
+        "may I know your name"
+      ],
+      [
+        "en",
+        "what should I call you"
+      ],
+      [
+        "en",
+        "do you have a name"
+      ],
+      [
+        "en",
+        "your name"
+      ],
+      [
+        "en",
+        "tell me your name"
+      ],
+      [
+        "en",
+        "what are you called"
+      ],
+      [
+        "en",
+        "what's your name"
+      ],
+      [
+        "en",
+        "who am I talking to"
+      ],
+      [
+        "en",
+        "can you tell me your name"
+      ],
+      [
+        "en",
+        "what's your full name"
+      ],
+      [
+        "en",
+        "what do people call you"
+      ],
+      [
+        "en",
+        "do you have any name"
+      ]
+    ]
+  },
+  "ner": {
+    "settings": {
+      "tag": "ner",
+      "entityPreffix": "%",
+      "entitySuffix": "%"
+    },
+    "rules": {}
+  },
+  "nlgManager": {
+    "settings": {
+      "tag": "nlg-manager"
+    },
+    "responses": {
+      "en": {
+        "greetings.bye": [
+          {
+            "answer": "see you soon!"
+          },
+          {
+            "answer": "Till next time"
+          },
+          {
+            "answer": "bye bye"
+          },
+          {
+            "answer": "have a great day"
+          }
+        ],
+        "greetings.hello": [
+          {
+            "answer": "Hey there!"
+          },
+          {
+            "answer": "Hello"
+          },
+          {
+            "answer": "Hi"
+          },
+          {
+            "answer": "Greetings"
+          },
+          {
+            "answer": "Hi! How can I assist you today?"
+          },
+          {
+            "answer": "Hello! What can I do for you?"
+          },
+          {
+            "answer": "Hi there! Need any help?"
+          },
+          {
+            "answer": "Hey! How's it going?"
+          },
+          {
+            "answer": "Greetings! How can I help?"
+          },
+          {
+            "answer": "Hi! What would you like to know?"
+          },
+          {
+            "answer": "Hello! How can I make your day better?"
+          },
+          {
+            "answer": "Hi! What's up?"
+          },
+          {
+            "answer": "Hey! What's new?"
+          },
+          {
+            "answer": "Hello! How can I assist?"
+          },
+          {
+            "answer": "Hi! I'm here to help you."
+          },
+          {
+            "answer": "Greetings! How can I assist you?"
+          },
+          {
+            "answer": "Hello! Need any assistance?"
+          },
+          {
+            "answer": "Hey! How's everything?"
+          },
+          {
+            "answer": "Hi! What can I do for you today?"
+          },
+          {
+            "answer": "Hello! How can I be of service?"
+          },
+          {
+            "answer": "Hi! How can I help you?"
+          },
+          {
+            "answer": "Greetings! What can I assist you with?"
+          },
+          {
+            "answer": "Hello! What would you like to chat about?"
+          },
+          {
+            "answer": "Hey! Need any help?"
+          },
+          {
+            "answer": "Hi! How's your day going?"
+          },
+          {
+            "answer": "Hello! How's it going?"
+          },
+          {
+            "answer": "Hi! What do you need help with?"
+          },
+          {
+            "answer": "Greetings! What can I do for you?"
+          },
+          {
+            "answer": "Hello! How can I assist you today?"
+          },
+          {
+            "answer": "Hey! How can I help you today?"
+          },
+          {
+            "answer": "Hi! What's on your mind?"
+          },
+          {
+            "answer": "Hello! How can I support you?"
+          },
+          {
+            "answer": "Hi! What would you like to talk about?"
+          },
+          {
+            "answer": "Greetings! How can I be of assistance?"
+          },
+          {
+            "answer": "Hello! What can I help you with today?"
+          },
+          {
+            "answer": "Hey! How can I assist you today?"
+          },
+          {
+            "answer": "Hi! How can I aid you today?"
+          },
+          {
+            "answer": "Hello! Need any help?"
+          },
+          {
+            "answer": "Greetings! How can I serve you?"
+          },
+          {
+            "answer": "Hi! How can I assist you?"
+          },
+          {
+            "answer": "Hey! How can I support you?"
+          },
+          {
+            "answer": "Hello! What can I do for you today?"
+          },
+          {
+            "answer": "Hi! How's everything going?"
+          },
+          {
+            "answer": "Greetings! How can I assist?"
+          }
+        ],
+        "name": [
+          {
+            "answer": "I am your friendly chatbot!"
+          },
+          {
+            "answer": "You can call me Chatbot."
+          },
+          {
+            "answer": "My name is Chatbot."
+          },
+          {
+            "answer": "I go by Chatbot."
+          },
+          {
+            "answer": "Just call me Chatbot."
+          },
+          {
+            "answer": "I'm known as Chatbot."
+          },
+          {
+            "answer": "You can refer to me as Chatbot."
+          },
+          {
+            "answer": "People call me Chatbot."
+          },
+          {
+            "answer": "Chatbot is my name."
+          },
+          {
+            "answer": "I am Chatbot, your assistant."
+          },
+          {
+            "answer": "Chatbot, at your service."
+          },
+          {
+            "answer": "My name is Chatbot, nice to meet you."
+          },
+          {
+            "answer": "I'm called Chatbot."
+          },
+          {
+            "answer": "My full name is Chatbot."
+          },
+          {
+            "answer": "I am Chatbot, your virtual assistant."
+          }
+        ]
+      }
+    }
+  },
+  "actionManager": {
+    "settings": {
+      "tag": "action-manager"
+    },
+    "actions": {}
+  },
+  "slotManager": {}
+}
