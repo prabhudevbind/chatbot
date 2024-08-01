@@ -48,6 +48,59 @@ app.post('/students', upload.single('profilePicture'), async (req, res) => {
   }
 });
 
+
+// Check-in API
+app.post('/students/:id/checkin', async (req, res) => {
+  try {
+    const studentId = req.params.id;
+    const now = new Date();
+    const date = now.toLocaleDateString();
+
+    const existingAttendance = await Attendance.findOne({ studentId, date });
+
+    if (existingAttendance) {
+      return res.status(400).send({ error: 'You have already checked in today.' });
+    }
+
+    const attendance = new Attendance({
+      studentId,
+      date,
+      checkInTime: now.toLocaleTimeString()
+    });
+
+    await attendance.save();
+    res.status(201).send(attendance);
+  } catch (error) {
+    res.status(500).send(error);
+  }
+});
+
+// Check-out API
+app.post('/students/:id/checkout', async (req, res) => {
+  try {
+    const studentId = req.params.id;
+    const now = new Date();
+    const date = now.toLocaleDateString();
+
+    const existingAttendance = await Attendance.findOne({ studentId, date });
+
+    if (!existingAttendance) {
+      return res.status(400).send({ error: 'Please check in first.' });
+    }
+
+    if (existingAttendance.checkOutTime) {
+      return res.status(400).send({ error: 'You have already checked out today.' });
+    }
+
+    existingAttendance.checkOutTime = now.toLocaleTimeString();
+    await existingAttendance.save();
+
+    res.status(200).send(existingAttendance);
+  } catch (error) {
+    res.status(500).send(error);
+  }
+});
+
 // Update student profile
 app.patch('/students/:id', upload.single('profilePicture'), async (req, res) => {
   try {
