@@ -6,11 +6,15 @@ const StudentProfile = require('./models/StudentProfile');
 const Attendance = require('./models/Attendance');
 const Payment = require('./models/Payment');
 var cors = require('cors')
-
+const jwt = require('jsonwebtoken');
 const app = express();
-const port = process.env.PORT || 3000;
+const port = process.env.PORT || 5000;
+const JWT_SECRET = 'dev980';
 
 app.use(cors())
+
+app.use('/auth', require('./routes/auth'));
+
  
 app.use(express.json());
 app.use('/uploads', express.static(path.join(__dirname, 'uploads')));
@@ -34,6 +38,14 @@ mongoose.connect('mongodb+srv://admin:admin@devcoder980.64axway.mongodb.net/stud
   console.error('Error connecting to MongoDB', error);
 });
 
+app.use(express.static("build"));
+app.get("/", function (req, res) {
+  res.sendFile(__dirname + "/build/index.html");
+});
+app.get("/api/name", function (req, res) {
+  res.send("Hello World");
+});
+
 // Create a new student profile
 app.post('/students', upload.single('profilePicture'), async (req, res) => {
   try {
@@ -47,6 +59,53 @@ app.post('/students', upload.single('profilePicture'), async (req, res) => {
     res.status(400).send(error);
   }
 });
+app.get('/profiledetails/:id', async function(req, res) {
+  try {
+    const studentId = req.params.id;
+    const user = await StudentProfile.findOne({_id: studentId });
+    if (!user) {
+      return res.status(404).json({ message: 'Student not found' });
+    }
+
+    res.status(200).json(user);
+  } catch (error) {
+    console.error(error);
+    res.status(500).json({ message: 'Internal server error' });
+  }
+});
+
+app.post('/students/login', async (req, res) => {
+ 
+  const { email, password } = req.body;
+  try {
+    const user = await StudentProfile.findOne({email: email });
+    if (!user) {
+      return res.status(401).json({ loginStatus: false, message: 'Invalid email or password' });
+    }
+    const isMatch = await user.comparePassword(password);
+    if (!isMatch) {
+      return res.status(401).json({ loginStatus: false, message: 'Invalid email or password' });
+    }
+    const token = jwt.sign({ id: user._id, role: user.role }, JWT_SECRET, { expiresIn: '15d' });
+    res.status(200).json({ loginStatus: true, token ,id: user._id});
+  } catch (error) {
+    res.status(500).json({ loginStatus: false, message: 'Server error' });
+  }
+});
+app.post('/admin/login', function(req, res) {
+  const { email, password } = req.body;
+  try {
+    if (email && password) {
+      if (email === "admin@gmail.com" && password === "admin") {
+        const token = jwt.sign({ email: email, role: 'admin' }, JWT_SECRET, { expiresIn: '17d' });
+        return res.status(200).json({ loginStatus: true, token });
+      }
+    }
+    res.status(401).json({ loginStatus: false, message: 'Invalid credentials' });
+  } catch (error) {
+    res.status(500).json({ loginStatus: false, message: 'Server error' });
+  }
+});
 
 
 // Check-in API
@@ -56,7 +115,7 @@ app.post('/students/:id/checkin', async (req, res) => {
     const now = new Date();
     const date = now.toLocaleDateString();
 
-    const existingAttendance = await Attendance.findOne({ studentId, date });
+    const existingAttendance = await Attendance.findOne({studentId,date });
 
     if (existingAttendance) {
       return res.status(400).send({ error: 'You have already checked in today.' });
@@ -82,7 +141,7 @@ app.post('/students/:id/checkout', async (req, res) => {
     const now = new Date();
     const date = now.toLocaleDateString();
 
-    const existingAttendance = await Attendance.findOne({ studentId, date });
+    const existingAttendance = await Attendance.findOne({studentId,date });
 
     if (!existingAttendance) {
       return res.status(400).send({ error: 'Please check in first.' });
@@ -153,7 +212,7 @@ app.post('/students/:id/attendance', async (req, res) => {
 // Get attendance records for a student
 app.get('/students/:id/attendance', async (req, res) => {
   try {
-    const attendanceRecords = await Attendance.find({ studentId: req.params.id });
+    const attendanceRecords = await Attendance.find({ studentId: req.params.id }).limit(10);
     res.status(200).send(attendanceRecords);
   } catch (error) {
     res.status(500).send(error);
@@ -183,6 +242,8 @@ app.get('/students/:id/payments', async (req, res) => {
     res.status(500).send(error);
   }
 });
+
+
 
 app.listen(port, () => {
   console.log(`Server running on port ${port}`);
